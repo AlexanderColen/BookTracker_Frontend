@@ -1,0 +1,22 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+#divAdd {
+    display: flex;
+    flex-direction: column;
+    max-width: 25vw;
+}
+
+#divAdd input {
+    width: 100%;
+}

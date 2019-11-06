@@ -1,0 +1,40 @@
+<div>
+    <h1>My Books</h1>
+
+    <button (click)='getBooks()'>Refresh My Books</button>
+
+    <div *ngIf='myBooks'>
+        <!--TODO: Change to cards.-->
+        <table *ngIf='myBooks.length > 0'>
+            <thead>
+                <tr>
+                    <th>BookID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th># of Pages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let b of myBooks'>
+                    <td>{{ b.bookID }}</td>
+                    <td>{{ b.title }}</td>
+                    <td>{{ b.author }}</td>
+                    <td>{{ b.pages }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div id='divAdd'>
+        <!--TODO: Properly design this section.-->
+        <label for="title">Title</label>
+        <input type="text" name="title" #title>
+        <label for="author">Author</label>
+        <input type="text" name="author" #author>
+        <label for="pages"># of Pages</label>
+        <input type="number" name="pages" #pages>
+        <button (click)='addBook(title.value, author.value, pages.value)'>Add Book</button>
+    </div>
+</div>

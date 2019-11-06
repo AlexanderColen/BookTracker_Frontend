@@ -1,0 +1,18 @@
+<div>
+    <h1>Search For Books</h1>
+
+    <input type='text' name='searchquery' placeholder='Enter search criteria' #query (keydown.enter)='searchForBooks(query.value)'>
+    <button (click)='searchForBooks(query.value)'>Search</button>
+
+    <div *ngIf='foundBooks'>
+        <h2>Found Books</h2>
+        <!--TODO: Change to cards.-->
+        <div *ngFor='let b of foundBooks'>
+            <p>{{ b.volumeInfo.title }}</p>
+            <p>{{ b.volumeInfo.subtitle }}</p>
+            <p>{{ b.volumeInfo.authors[0] }}</p>
+            <p>{{ b.volumeInfo.pageCount }}</p>
+            <p>{{ b.volumeInfo.language }}</p>
+        </div>
+    </div>
+</div>
